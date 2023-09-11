@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const { authMiddleware} = require("../middlewares/authMiddleware");
+const { createBlog, updateBlog, getBlog, getAllBlogs, deleteBlog, LikeBlog} = require('../controller/blogCtrl');
+router.post('/', authMiddleware, createBlog);
+router.put('/likes', authMiddleware, LikeBlog); 
+router.put('/:id', authMiddleware, updateBlog);
+router.get('/:id',getBlog);
+router.get('/', getAllBlogs);
+router.delete('/:id', authMiddleware, deleteBlog);
+module.exports = router;

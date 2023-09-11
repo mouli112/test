@@ -1,0 +1,3 @@
+# Set LF line endings for specific files
+package-lock.json text eol=lf
+package.json text eol=lf
